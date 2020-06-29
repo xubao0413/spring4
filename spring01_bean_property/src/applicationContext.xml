@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="peo" class="com.bjsxt.pojo.People">
+    	<property name="id">
+    		<value>456</value>
+    	</property>
+    	<property name="name">
+    		<value>zhangsan</value>
+    	</property>
+    	<property name="sets">
+    		<set>
+    			<value>1</value>
+    			<value>2</value>
+    			<value>3</value>
+    			<value>4</value>
+    		</set>
+    	</property>
+    	<!-- <property name="list">
+    		<list>
+	    		<value>11</value>
+	    		<value>22</value>
+    		</list>
+    	</property> -->
+    	<!-- 当list只有一个参数时，可以通过value直接赋值，如果值有逗号，它是不会进行分割的，长度为:1 -->
+    	<property name="list" value="1,2,3">
+    	</property>
+    	<property name="strs" >
+    		<array>
+    			<value>1</value>
+    			<value>2</value>
+    			<value>3</value>
+    		</array>
+    	</property>
+    	<property name="map">
+    		<map>
+    			<entry key="a" value="b" >
+    			</entry>
+    			<entry key="c" value="d" >
+    			</entry>
+    		</map>
+    	</property>
+    	
+    	<!-- <property name="demo">
+    		<props>
+    			<prop key="key">value</prop>
+    			<prop key="key1">value1</prop>
+    		</props>
+    	</property> -->
+    	
+    	<property name="desk" ref="desk"></property>
+    </bean>
+    
+    <bean id="desk" class="com.bjsxt.pojo.Desk">
+    	<property name="id" value="1"></property>
+    	<property name="price" value="12"></property>
+    </bean>
+</beans>
